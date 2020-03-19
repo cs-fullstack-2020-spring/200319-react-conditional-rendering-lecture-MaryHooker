@@ -18,11 +18,11 @@ margin: 1%;
 }
 
 .border{
-  border: 5px solid rgb(33, 119, 33) ;
+  border: 6px solid rgb(33, 119, 33) ;
 }
 
 .legend{
-  font-size: 25px;
+  font-size: 28px;
   
 }
 
@@ -36,4 +36,6 @@ margin: 1%;
   color: rgb(22, 73, 22);
   height: 30px;
   font-weight: bold;
+  font-size: 15px;
+  font-family: serif;
 }
