@@ -8,6 +8,8 @@ class SignUp extends Component {
             userName: '',
             email: '',
             password: '',
+            //HTML RENDERING
+            hasBeenSubmitted: false,
 
         }
     }
@@ -34,8 +36,6 @@ class SignUp extends Component {
         } else if (event.target.name === 'password') {
             this.setState(
                 {
-                    password: event.target.value
-                }
             )
         }
 
@@ -44,9 +44,26 @@ class SignUp extends Component {
     handleSubmission = (event) => {
         event.preventDefault();
         console.log(this.state);
+        //update state of has been submitted/HTML RENDERING/LOOK ABOVE RETURN
+        this.setState(
+            {
+                hasBeenSubmitted: true
+            }
+        )
     }
 
     render() {
+        //Will run if true and form has been submitted/if you want to send render something if it is false put !(bang) in front of this/CONDITIONAL HTML RENDERING
+        if(this.state.hasBeenSubmitted){
+            return(
+                <div>
+                    <h2>Thank you {this.state.fullName}!</h2>
+                    <h1>You've been signed up!</h1>
+                    
+                </div>
+            )
+        }
+        //ELSE IF hasBeenSubmitted is false/ render the text below
         return (
             <div>
                 <form action="">

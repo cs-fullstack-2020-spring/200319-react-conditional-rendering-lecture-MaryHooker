@@ -6,11 +6,13 @@ class AppContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            //CONDITIONAL RENDERING
             isLoggingIn: false,
             isSigningUp: false,
         }
     }
 
+    //CONDITIONAL RENDERING
     updateIsLoggingIn = () => {
         // //sanity
         // console.log('Login button is clicked');
@@ -28,6 +30,7 @@ class AppContainer extends Component {
         )
     }
 
+    //CONDITIONAL RENDERING
     updateIsSigningUp = () => {
         // //sanity
         // console.log('Signup button is clicked');
@@ -46,6 +49,7 @@ class AppContainer extends Component {
     }
 
     render() {
+        //Conditional rendering of child components
         let userForm;
 
         if(this.state.isLoggingIn){
@@ -60,12 +64,15 @@ class AppContainer extends Component {
             <div>
                 <h1>20-03-19 React Conditional Rendering Lecture</h1>
                 <br/>
+                {/* conditional rendering on buttons */}
                 <button onClick={this.updateIsLoggingIn} className='button'>Login</button>
                 <br/>
                 <br/>
+                {/* conditional rendering on buttons */}
                 <button onClick={this.updateIsSigningUp} className='button'>Sign Up</button>
                <br/>
 
+               {/* CONDITIONAL RENDERING OF CHILD COMPONENTS */}
                 <div className='userForm'>
                 {userForm}
                 </div>

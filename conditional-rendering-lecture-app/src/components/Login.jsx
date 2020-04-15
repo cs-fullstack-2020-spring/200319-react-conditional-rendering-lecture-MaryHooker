@@ -7,6 +7,8 @@ class Login extends Component {
 
             userName: '',
             password: '',
+            //CONDITIONAL HTML RENDERING
+            hasLoggedIn: false,
 
         }
     }
@@ -32,9 +34,27 @@ class Login extends Component {
     handleSubmission = (event) => {
         event.preventDefault();
         console.log(this.state);
+
+        //update state of has been submitted/HTML RENDERING/LOOK ABOVE RETURN
+        this.setState(
+            {
+                hasLoggedIn: true
+            }
+        )
     }
 
     render() {
+        //Will run if true and form has been submitted/if you want to send render something if it is false put !(bang) in front of this/HTML CONDITIONAL RENDERING
+        if(this.state.hasLoggedIn){
+            return(
+                <div>
+                    
+                    <h2>Welcome back {this.state.userName}!</h2>
+                    <h1>You've been logged in...</h1>
+                </div>
+            )
+        }
+
         return (
             <div>
                 <form action="">
